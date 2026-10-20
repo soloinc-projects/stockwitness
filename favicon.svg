@@ -1,7 +1,39 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" role="img" aria-label="StockWitness favicon">
-  <rect x="0" y="0" width="24" height="24" rx="6" fill="#0E6B64" />
-  <polygon points="12,2 22,2 22,12" fill="#FFFFFF" fill-opacity="0.22" />
-  <line x1="12" y1="2" x2="22" y2="12" stroke="#FFFFFF" stroke-opacity="0.4" stroke-width="0.6" stroke-linecap="round" />
-  <circle cx="11" cy="14" r="5.5" fill="none" stroke="#FFFFFF" stroke-width="2.5" />
-  <circle cx="11" cy="14" r="2" fill="#FFFFFF" />
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" role="img" aria-labelledby="stockwitness-mark-title">
+  <title id="stockwitness-mark-title">StockWitness mark: a stock box in a camera's viewfinder</title>
+  <!--
+    24-unit grid. generate-assets.py draws the same primitives at every size; keep the two in step.
+    Tile: green-700, lightened toward green-400 at the top (layered depth).
+    Viewfinder corners: square 3.4..20.6, arms 3.6 long, 1.9 thick, round ends (white).
+    Box: lid 6.0,6.2 - 18.0,10.0 with its seam 9.2..10.0; body 6.7,9.6 - 17.3,18.0 whose
+    lower lip (17.2..18.0) is the darker amber; label slot 9.9,11.4 - 14.1,13.0.
+    Colours are tokens.json palette values: green-700 #15803D, green-400 #4ADE80,
+    amber-300 #FBBF24, amber-700 #B45309, near-black-teal #0F1413.
+  -->
+  <defs>
+    <linearGradient id="swx-tile" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#21954C" />
+      <stop offset="1" stop-color="#15803D" />
+    </linearGradient>
+    <filter id="swx-shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="0.29" stdDeviation="0.29" flood-color="#000000" flood-opacity="0.3" />
+    </filter>
+  </defs>
+  <rect x="0" y="0" width="24" height="24" rx="5.4" fill="url(#swx-tile)" />
+  <g filter="url(#swx-shadow)">
+    <g fill="#FFFFFF">
+      <rect x="3.4" y="3.4" width="3.6" height="1.9" rx="0.95" />
+      <rect x="3.4" y="3.4" width="1.9" height="3.6" rx="0.95" />
+      <rect x="17" y="3.4" width="3.6" height="1.9" rx="0.95" />
+      <rect x="18.7" y="3.4" width="1.9" height="3.6" rx="0.95" />
+      <rect x="3.4" y="18.7" width="3.6" height="1.9" rx="0.95" />
+      <rect x="3.4" y="17" width="1.9" height="3.6" rx="0.95" />
+      <rect x="17" y="18.7" width="3.6" height="1.9" rx="0.95" />
+      <rect x="18.7" y="17" width="1.9" height="3.6" rx="0.95" />
+    </g>
+    <rect x="6.7" y="9.6" width="10.6" height="8.4" rx="0.8" fill="#E2991B" />
+    <rect x="6.7" y="9.6" width="10.6" height="7.6" rx="0.8" fill="#FBBF24" />
+    <rect x="6" y="6.2" width="12" height="3.8" rx="0.8" fill="#FBBF24" />
+    <rect x="6" y="9.2" width="12" height="0.8" rx="0.4" fill="#E2991B" />
+    <rect x="9.9" y="11.4" width="4.2" height="1.6" rx="0.8" fill="#124F2A" />
+  </g>
 </svg>
